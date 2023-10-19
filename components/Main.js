@@ -3,23 +3,34 @@
 // commit cada cosa importante que hagamos y al final del dia también
 
 import { LitElement, html, css } from 'lit';
-import { Header } from './header';
+import { header } from './header';
 import { Footer } from './footer'
 import { pokemons } from '../db/pokemon';
 
+import { mainStyles } from "./main-styles";
+        
+
 class Main extends LitElement {
     static styles = [
+      mainStyles,
       css`
         :host {
           display: block;
         }
+
         #pokemon-container{
           width: 400px;
           text-align: center;
           border: 1px solid red;
           margin: auto;
           float:left;
+          margin-left:70px;
         }
+        
+        section {
+          min-height: 100vh;
+/*           background-color: #e02f2f;
+ */        }
       `,
     ];
 
@@ -30,7 +41,8 @@ constructor() {
 
   render() {
     return html`
-        <header-section></header-section>
+      <header-section></header-section>
+      <section>
         ${this.pokemons.map( pokemon => html`
           <a>
             <div id="pokemon-container">
@@ -39,7 +51,7 @@ constructor() {
             </div>
           </a>
         `)}
-        
+      </section>
     `;
   }
 }
