@@ -1,9 +1,9 @@
 import {css} from 'lit';
 
 const typeColor = {
-    "black": css`#1c1c1c`,
-    "gray": css`#ececec`,
-    "white": css`#f7f7f7`,
+    "smoke": css`#1c1c1c`,
+    "cloudy": css`#ececec`,
+    "snow": css`#f7f7f7`,
 
     "normal": css`#A8A878`,
     "fire": css`#F08030`,
@@ -27,14 +27,11 @@ const typeColor = {
 
 export const mainStyles = css`
 
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: var(--clr-black);
-    font-family: 'Rubik', sans-serif;
+    color: ${typeColor["smoke"]};
 }
 
 ul {
@@ -47,11 +44,6 @@ button {
     background-color: transparent;
     border: 0;
     border-radius: 0;
-}
-
-body {
-    min-height: 100vh;
-    background-color: var(--clr-gray);
 }
 
 header {
@@ -81,7 +73,7 @@ img {
 }
 
 .btn-header {
-    background-color: var(--clr-gray);
+    background-color: ${typeColor["cloudy"]};
     padding: .5rem;
     border-radius: 100vmax;
     cursor: pointer;
@@ -96,206 +88,96 @@ img {
     box-shadow: 0 0 2rem rgba(0, 0, 0, .25);
 }
 
-main {
-    padding: 2rem;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.pokemon-all {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-}
-
-@media screen and (min-width: 470px) {
-    .pokemon-all {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media screen and (min-width: 700px) {
-    .pokemon-all {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
-}
-
-.pokemon {
-    border-radius: 1rem;
-    background-color: var(--clr-white);
-    box-shadow: 0 0 3rem -1rem rgba(0, 0, 0, .25);
-    padding-block: 1rem;
-    text-transform: uppercase;
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-}
-
-.pokemon-id-back {
-    position: absolute;
-    top: 1rem;
-    left: 50%;
-    transform: translateX(-50%);
-    font-size: 6rem;
-    font-weight: 800;
-    z-index: -1;
-    color: var(--clr-gray);
-}
-
-.pokemon-image {
-    padding-inline: 1rem;
-    display: flex;
-    justify-content: center;
-}
-
-.pokemon-image img {
-    width: 100%;
-    max-width: 6rem;
-}
-
-.pokemon-info {
-    display: flex;
-    flex-direction: column;
-    gap: .5rem;
-    padding-inline: 1rem;
-    align-items: center;
-    text-align: center;
-}
-
-.name-container {
-    display: flex;
-    align-items: center;
-    column-gap: .5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.pokemon-id {
-    background-color: var(--clr-gray);
-    padding: .25rem .5rem;
-    border-radius: 100vmax;
-    font-size: .75rem;
-    font-weight: 500;
-}
-
-.pokemon-name {
-    font-size: 1.4rem;
-}
-
-.pokemon-types {
-    display: flex;
-    gap: .5rem;
-    font-size: .75rem;
-    font-weight: 500;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.type {
-    padding: .25rem .5rem;
-    border-radius: 100vmax;
-}
-
-.pokemon-stats {
-    display: flex;
-    gap: 1rem;
-    font-size: .85rem;
-}
-
-.stat {
-    background-color: var(--clr-gray);
-    padding: .25rem .5rem;
-    border-radius: 100vmax;
-}
 
 /* COLOUR FILTER BUTTONS */
 
 .normal {
     background-color: ${typeColor["normal"]};
-    color: ${typeColor["black"]};
+    color: ${typeColor["smoke"]};
 }
 
 .fire {
     background-color: ${typeColor["fire"]};
-    color: ${typeColor["black"]};
+    color: ${typeColor["smoke"]};
 }
 
 .water {
     background-color: ${typeColor["water"]};
-    color: ${typeColor["white"]};
+    color: ${typeColor["snow"]};
 }
 
 .grass {
     background-color: ${typeColor["grass"]};
-    color: var(--clr-black);
+    color: ${typeColor["smoke"]};
 }
 
 .electric {
     background-color: ${typeColor["electric"]};
-    color: var(--clr-black);
+    color: ${typeColor["smoke"]};
 }
 
 .ice {
     background-color: ${typeColor["ice"]};
-    color: var(--clr-black);
+    color: ${typeColor["smoke"]};
 }
 
 .fighting {
     background-color: ${typeColor["fighting"]};
-    color: var(--clr-white);
+    color: ${typeColor["snow"]};
 }
 
 .poison {
-    background-color: ${typeColor["fire"]};
-    color: var(--clr-white);
+    background-color: ${typeColor["poison"]};
+    color: ${typeColor["snow"]};
 }
 
 .ground {
-    background-color: ${typeColor[""]};
-    color: var(--clr-black);
+    background-color: ${typeColor["ground"]};
+    color: ${typeColor["snow"]};
 }
 
 .flying {
-    background-color: ${typeColor[""]};
-    color: var(--clr-black);
+    background-color: ${typeColor["flying"]};
+    color: ${typeColor["snow"]};
 }
 
 .psychic {
-    background-color: ${typeColor[""]};
-    color: var(--clr-black);
+    background-color: ${typeColor["psychic"]};
+    color: ${typeColor["snow"]};
 }
 
 .bug {
-    background-color: ${typeColor[""]};
-    color: var(--clr-black);
+    background-color: ${typeColor["bug"]};
+    color: ${typeColor["smoke"]};
 }
 
 .rock {
-    background-color: ${typeColor[""]};
-    color: var(--clr-black);
+    background-color: ${typeColor["rock"]};
+    color: ${typeColor["smoke"]};
 }
 
 .ghost {
-    background-color: var(--type-ghost);
-    color: var(--clr-white);
+    background-color: ${typeColor["ghost"]};
+    color: ${typeColor["snow"]};
 }
 
 .dark {
-    background-color: var(--type-dark);
-    color: var(--clr-white);
+    background-color: ${typeColor["dark"]};
+    color: ${typeColor["snow"]};
 }
 
 .dragon {
-    background-color: ${typeColor[""]};
-    color: var(--clr-white);
+    background-color: ${typeColor["dragon"]};
+    color: ${typeColor["snow"]};
 }
 
 .steel {
-    background-color: ${typeColor[""]};
-    color: var(--clr-black);
+    background-color: ${typeColor["steel"]};
+    color: ${typeColor["smoke"]};
 }
 
 .fairy {
-    background-color: ${typeColor[""]};
-    color: var(--clr-black);
-}`;
+    background-color: ${typeColor["fairy"]};
+    color: ${typeColor["smoke"]};
+}
+`;

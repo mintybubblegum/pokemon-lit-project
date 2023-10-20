@@ -29,15 +29,15 @@ class Main extends LitElement {
         
         section {
           min-height: 100vh;
-/*           background-color: #e02f2f;
- */        }
-      `,
+         background-color: #e02f2f;
+         }
+      `
     ];
 
-constructor() {
-    super();
-    this.pokemons = pokemons;
-  }
+  constructor() {
+      super();
+      this.pokemons = pokemons;
+    }
 
   render() {
     return html`
