@@ -1,6 +1,6 @@
 import { LitElement, html, css } from 'lit';
 
-export class Footer extends LitElement {
+export class footer extends LitElement {
     static styles = [
         css`
             :host {
@@ -22,4 +22,4 @@ export class Footer extends LitElement {
         `;
     }
 }
-customElements.define('footer-section', Footer);
+customElements.define('footer-section', footer);

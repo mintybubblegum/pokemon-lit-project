@@ -14,8 +14,7 @@ export class header extends LitElement {
     render() {
         return html`
             <header>
-                <p>Filter Pokemon type</p>
-                <a href="https://fontmeme.com/pokemon-font/"><img src="https://fontmeme.com/permalink/231019/5bc185de76f1f0c4891382e46a72db2a.png" alt="pokemon-font" border="0"></a>
+                <a href="/"><img src="https://fontmeme.com/permalink/231019/5bc185de76f1f0c4891382e46a72db2a.png" alt="pokemon-font" border="0"></a>
                 <ul class="nav-list">
                     <li class="nav-item"><button class="btn btn-header" id="ver-all">See all</button></li> 
                     <li class="nav-item"><button class="btn btn-header normal" id="normal">Normal</button></li>
