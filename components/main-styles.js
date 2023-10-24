@@ -48,7 +48,8 @@ button {
 
 header {
     padding-block: 1rem;
-    box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, .5);
+    background-color:${typeColor["snow"]};
+    box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 1)!important;
 }
 
 img {
