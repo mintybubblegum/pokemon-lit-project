@@ -22,7 +22,7 @@ class main extends LitElement {
           text-align: center;
           margin: auto;
           float:left;
-          margin-left:70px;
+          margin-left: 70px;
         }
         
         section {
@@ -44,7 +44,8 @@ class main extends LitElement {
     static get properties() {
       return {
           pokemons: { type: Array},
-          selectedPokemon:{type:Object}
+          selectedPokemon:{type:Object},
+          isCardOpen: { type: Boolean },
       };
   }
 
@@ -52,12 +53,13 @@ class main extends LitElement {
       super();
       this.pokemons = pokemons;
       this.selectedPokemon = {};
+      this.isCardOpen = this._card;
     }
 
   render() {
     return html`
       <header-section></header-section>
-      <search-bar @search="${this.handleSearch}"></search-bar>
+      ${this.isCardOpen ? this._card : html`<search-bar @search="${this.handleSearch}"></search-bar>`}
       ${this._body}
       `;
   }
@@ -89,23 +91,27 @@ class main extends LitElement {
     }
   }
 
-  get _body(){
-    if(this.selectedPokemon.img===undefined){
-     return html `${this.allPokemons(this.pokemons)}`;
-    }else{
-        return html `${this._card}`;
+  get _body() {
+    if (this.selectedPokemon.img === undefined){
+      return html `${this.allPokemons(this.pokemons)}`;
+    } else {
+      return html `${this.isCardOpen}`;
     }
+  }
+
+  get _card() {
+    return html`
+      <card-page .pokemonData="${this.selectedPokemon}">
+      </card-page>
+      `;
   }
 
   openCard(pokemon) {
     this.selectedPokemon = pokemon;
   }
 
-  get _card(){
-    return html`
-      <card-page .pokemonData="${this.selectedPokemon}">
-      </card-page>
-    `;
+  toggleSearchBar(isOpen) {
+    this.isCardOpen = isOpen;
   }
 }
 

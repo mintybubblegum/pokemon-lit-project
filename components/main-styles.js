@@ -53,6 +53,7 @@ button {
 
 header {
     padding-block: 1rem;
+    margin-bottom: 50px;
     background-color:${typeColor["snow"]};
     box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 1)!important;
 }
