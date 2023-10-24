@@ -16,7 +16,7 @@ export class card extends LitElement {
             button {
                 width: 250px;
                 border: 2px solid green;
-                background-color: #4CAF50;
+                background-color: red;
                 border-radius: 15px;
                 color: white;
                 padding: 20px;
