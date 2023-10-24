@@ -22,7 +22,7 @@ class main extends LitElement {
           text-align: center;
           margin: auto;
           float:left;
-          margin-left: 70px;
+          margin-left:70px;
         }
         
         section {
@@ -53,13 +53,13 @@ class main extends LitElement {
       super();
       this.pokemons = pokemons;
       this.selectedPokemon = {};
-      this.isCardOpen = this._card;
+      this.isCardOpen = false;
     }
 
   render() {
     return html`
       <header-section></header-section>
-      ${this.isCardOpen ? this._card : html`<search-bar @search="${this.handleSearch}"></search-bar>`}
+      ${this.isCardOpen ? '' : html`<search-bar @search="${this.handleSearch}"></search-bar>`}
       ${this._body}
       `;
   }
@@ -95,23 +95,23 @@ class main extends LitElement {
     if (this.selectedPokemon.img === undefined){
       return html `${this.allPokemons(this.pokemons)}`;
     } else {
-      return html `${this.isCardOpen}`;
+      return html `${this._card}`;
     }
   }
 
   get _card() {
     return html`
-      <card-page .pokemonData="${this.selectedPokemon}">
-      </card-page>
+      <card-page .pokemonData="${this.selectedPokemon}" @close-card="${this.closeCard}"></card-page>
       `;
   }
 
   openCard(pokemon) {
     this.selectedPokemon = pokemon;
+    this.isCardOpen = true;
   }
 
-  toggleSearchBar(isOpen) {
-    this.isCardOpen = isOpen;
+  closeCard() {
+    this.isCardOpen = false;
   }
 }
 
