@@ -26,8 +26,9 @@ class main extends LitElement {
         }
         
         section {
-          min-height: 100vh;
-          background-color: #e02f2f;
+          margin:0;
+          padding:0;
+          background-color: #f9a7a7;
          }
 
          img {

@@ -8,6 +8,10 @@ export class header extends LitElement {
             :host {
                 display: block;
             }
+
+            img {
+                cursor: pointer;
+            }
         `
     ];
 
