@@ -15,7 +15,7 @@ export class card extends LitElement {
                 background-color: #ececec;
                 width: 800px;
                 margin: auto;
-                margin-top:100px;
+                margin-top: 30px;
                 margin-bottom: 50px;
                 padding: 0 30px;
                 border-radius: 20px;
@@ -53,6 +53,9 @@ export class card extends LitElement {
             }
             .padding-box {
                 padding-bottom: 25px;
+            }
+            h1 {
+                margin: -30px 0 -20px 0;
             }
         `
     ];
