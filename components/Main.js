@@ -9,7 +9,7 @@ import './card';
 import { mainStyles } from "./main-styles";
         
 
-class main extends LitElement {
+class Main extends LitElement {
   static styles = [
     mainStyles,
     css`
@@ -18,6 +18,8 @@ class main extends LitElement {
       }
 
       #pokemon-container{
+        position: relative;
+        isolation: isolate;
         width: 400px;
         background-color: #ececec;
         border-radius:20px;
@@ -28,6 +30,18 @@ class main extends LitElement {
         margin-bottom: 50px;
         float:left;
         margin-left:70px;
+        overflow: hidden;
+      }
+
+      .pokemon-back-num {
+        position: absolute;
+        top: -7rem;
+        left: 50%; /* para centrar con respecto a la card */
+        transform: translateX(-50%); /* para centrar con respecto a la card */
+        font-size: 13em;
+        font-weight:800;
+        opacity: 0.1;
+        z-index: -1;
       }
       
       h3 {
@@ -42,19 +56,21 @@ class main extends LitElement {
 
         img {
         cursor: pointer;
+        top: 0px;
         }
 
         img:hover {
-        opacity: 0.5;
+          filter: blur(2px);
+
         }
-    `
+        `
   ];
 
   static get properties() {
     return {
-        pokemons: { type: Array},
-        selectedPokemon:{type:Object},
-        isCardOpen: { type: Boolean },
+      pokemons: { type: Array},
+      selectedPokemon:{type:Object},
+      isCardOpen: { type: Boolean },
     };
   }
 
@@ -68,7 +84,7 @@ class main extends LitElement {
   render() {
     return html`
       <header-section .isCardOpen="${this.isCardOpen}"></header-section>
-      ${this.isCardOpen ? '' : html`<search-bar></search-bar>`}
+      ${this.isCardOpen ? '' : html`<search-bar @search="${this.handleSearchInput}"></search-bar>`}
       ${this._body}
       `;
   }
@@ -83,21 +99,30 @@ class main extends LitElement {
 
   allPokemons(pokemons){
     if(pokemons?.length){
-    return html`
-      <section>
-        ${pokemons
-          .map( pokemon => html`
-            <a @click="${() => this.openCard(pokemon)}">
-              <div id="pokemon-container">
-                <p class="">#${pokemon.num}</p>
-                <img src="${pokemon.img}" alt="${pokemon.name}">
-                <h3>#${pokemon.num} ${pokemon.name}</h3>
-              </div>
-            </a>
-          `)}
-      </section>
-    `;
-
+      return html`
+        <section>
+          ${pokemons
+            .map( pokemon => html`
+              <a @click="${() => this.openCard(pokemon)}">
+                <div id="pokemon-container">
+                  <p class="pokemon-back-num">#${pokemon.num}</p>
+                  <img src="${pokemon.img}" alt="${pokemon.name}">
+                  <h3>#${pokemon.num} ${pokemon.name}</h3>
+                </div>
+              </a>
+              `)}
+            </section>
+            <div class="pagination">
+              <a href="#" id="previous" onclick="getPreviousPage()">&laquo;</a>
+              <a href="#">1</a>
+              <a class="active" href="#">2</a>
+              <a href="#">3</a>
+              <a href="#">4</a>
+              <a href="#">5</a>
+              <a href="#">6</a>
+              <a href="#" id="next" onclick="getNextPage()">&raquo;</a>
+            </div>
+      `;
     }
   }
 
@@ -123,6 +148,15 @@ class main extends LitElement {
   closeCard() {
     this.isCardOpen = false;
   }
+
+  handleSearchInput(evt){
+    const filteredPokemon = evt.detail;
+    this.pokemons = pokemons.filter( item => item.name.indexOf(filteredPokemon) >= 0 );
+  }
+
+  /* PAGINATION STARTS */
+
+
 }
 
-customElements.define('main-page', main);
+customElements.define('main-page', Main);
