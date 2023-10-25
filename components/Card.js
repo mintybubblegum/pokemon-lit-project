@@ -68,7 +68,6 @@ export class card extends LitElement {
     constructor(){
         super();
         this.pokemonData = {};
-
     }
 
     render() {
