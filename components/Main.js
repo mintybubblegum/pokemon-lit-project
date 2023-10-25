@@ -10,52 +10,52 @@ import { mainStyles } from "./main-styles";
         
 
 class main extends LitElement {
-    static styles = [
-      mainStyles,
-      css`
-        :host {
-          display: block;
+  static styles = [
+    mainStyles,
+    css`
+      :host {
+        display: block;
+      }
+
+      #pokemon-container{
+        width: 400px;
+        background-color: #ececec;
+        border-radius:20px;
+        box-shadow: 0 0 2.5rem -1rem rgba(0, 0, 0, .5);
+        text-align: center;
+        text-transform: uppercase;
+        margin: auto;
+        margin-bottom: 50px;
+        float:left;
+        margin-left:70px;
+      }
+      
+      h3 {
+        margin: -20px 0 20px 0;
+      }
+      
+      section {
+        margin:0;
+        padding:0;
+        background-color: #f9a7a7;
         }
 
-        #pokemon-container{
-          width: 400px;
-          background-color: #f7f7f7;
-          border-radius:20px;
-          box-shadow: 0 0 2.5rem -1rem rgba(0, 0, 0, .5);
-          text-align: center;
-          text-transform: uppercase;
-          margin: auto;
-          margin-bottom: 50px;
-          float:left;
-          margin-left:70px;
+        img {
+        cursor: pointer;
         }
-        
-        h3 {
-          margin: -20px 0 20px 0;
+
+        img:hover {
+        opacity: 0.5;
         }
-        
-        section {
-          margin:0;
-          padding:0;
-          background-color: #f9a7a7;
-         }
+    `
+  ];
 
-         img {
-          cursor: pointer;
-         }
-
-         img:hover {
-          opacity: 0.5;
-         }
-      `
-    ];
-
-    static get properties() {
-      return {
-          pokemons: { type: Array},
-          selectedPokemon:{type:Object},
-          isCardOpen: { type: Boolean },
-      };
+  static get properties() {
+    return {
+        pokemons: { type: Array},
+        selectedPokemon:{type:Object},
+        isCardOpen: { type: Boolean },
+    };
   }
 
   constructor() {
@@ -67,8 +67,8 @@ class main extends LitElement {
 
   render() {
     return html`
-      <header-section></header-section>
-      ${this.isCardOpen ? '' : html`<search-bar @search="${this.handleSearch}"></search-bar>`}
+      <header-section .isCardOpen="${this.isCardOpen}"></header-section>
+      ${this.isCardOpen ? '' : html`<search-bar></search-bar>`}
       ${this._body}
       `;
   }
