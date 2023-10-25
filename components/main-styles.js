@@ -32,7 +32,6 @@ export const mainStyles = css`
     padding: 0;
     box-sizing: border-box;
     color: ${typeColor["smoke"]};
-    
 }
 
 section {
@@ -92,6 +91,26 @@ img {
 .btn-header:hover {
     transform: scale(1.1);
     box-shadow: 0 0 2rem rgba(0, 0, 0, .25);
+}
+
+/* PAGINATION */
+.pagination a {
+    font-family: 'Mukta', sans-serif; 
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+        
+.pagination a.active {
+    background-color: #4CAF50;
+    border-radius: 20px;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 20px;
 }
 
 

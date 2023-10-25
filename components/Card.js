@@ -13,10 +13,10 @@ export class card extends LitElement {
             #card-container {
                 background-image: url("");
                 background-color: #ececec;
-                width: 800px;
+                width: 900px;
                 margin: auto;
                 margin-top: 30px;
-                margin-bottom: 50px;
+                margin-bottom: 20px;
                 padding: 0 30px;
                 border-radius: 20px;
                 box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 1)!important;
@@ -108,6 +108,5 @@ export class card extends LitElement {
             </div>
         `;
     }
-    
 }
 customElements.define('card-page', card);
