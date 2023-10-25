@@ -8,10 +8,22 @@ export class Searchbar extends LitElement {
             :host {
                 display: block;
             }
-            div {
-                display: flex;
-                justify-content: center;
-                margin: 2em 0;
+            .search-container {
+                position: relative;
+                display: inline-block;
+                display:flex;
+                justify-content:center;
+                margin: 20px 0;
+            }
+            .searchbar {
+                border: 1px solid gray;
+                background-color:white;
+                border-radius: 20px;
+                padding: 0 20px 3px;
+            }
+            input {
+                padding-right:40px;
+                border:none;
             }
         `
     ];
@@ -29,13 +41,15 @@ export class Searchbar extends LitElement {
 
     render() {
         return html`
-            <div>
-                <input
-                    class="inputSearch"
+            <div class="search-container">
+                <div class="searchbar">
+                    <input
                     type="text"
-                    placeholder="Search Pokémon by name..."
+                    placeholder="Search pokemon name..."
                     @input="${this.handleSearchInput}"
-                />
+                    />
+                    <icon>🔎</icon>
+                </div>
             </div>
         `;
     }

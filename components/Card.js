@@ -3,7 +3,6 @@ import { mainStyles } from "./main-styles.js";
 import './header';
 
 
-
 export class card extends LitElement {
     static styles = [
         mainStyles,
@@ -16,6 +15,8 @@ export class card extends LitElement {
                 background-color: #ececec;
                 width: 800px;
                 margin: auto;
+                margin-top:100px;
+                margin-bottom: 50px;
                 padding: 0 30px;
                 border-radius: 20px;
                 box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 1)!important;
@@ -105,5 +106,6 @@ export class card extends LitElement {
             </div>
         `;
     }
+    
 }
 customElements.define('card-page', card);

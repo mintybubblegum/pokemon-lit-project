@@ -19,10 +19,19 @@ class main extends LitElement {
 
         #pokemon-container{
           width: 400px;
+          background-color: #f7f7f7;
+          border-radius:20px;
+          box-shadow: 0 0 2.5rem -1rem rgba(0, 0, 0, .5);
           text-align: center;
+          text-transform: uppercase;
           margin: auto;
+          margin-bottom: 50px;
           float:left;
           margin-left:70px;
+        }
+        
+        h3 {
+          margin: -20px 0 20px 0;
         }
         
         section {
@@ -80,8 +89,9 @@ class main extends LitElement {
           .map( pokemon => html`
             <a @click="${() => this.openCard(pokemon)}">
               <div id="pokemon-container">
+                <p class="">#${pokemon.num}</p>
                 <img src="${pokemon.img}" alt="${pokemon.name}">
-                <h3>${pokemon.num} ${pokemon.name}</h3>
+                <h3>#${pokemon.num} ${pokemon.name}</h3>
               </div>
             </a>
           `)}
