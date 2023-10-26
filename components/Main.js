@@ -3,7 +3,7 @@
 import { LitElement, html, css } from 'lit';
 import { pokemons } from '../db/pokemon';
 import './header';
-import  './searchbar';
+import  './Searchbar';
 import './card';
 
 import { mainStyles } from "./main-styles";
@@ -21,6 +21,7 @@ class Main extends LitElement {
         position: relative;
         isolation: isolate;
         width: 400px;
+        max-width: 480px;
         background-color: #ececec;
         border-radius:20px;
         box-shadow: 0 0 2.5rem -1rem rgba(0, 0, 0, .5);
@@ -47,22 +48,37 @@ class Main extends LitElement {
       }
       
       section {
-        padding-top: 30px;
-        background-color: #f9a7a7;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.5rem 2rem;
+        margin: 0 auto;
+        max-width: 480px;
+        border: 1px solid blue;
+      }
 
+      @media screen and (min-width:900px) {
+        section {
+          grid-template-columns: 1fr 1fr;
+          max-width: 900px;
         }
+      }
 
-        img {
+      @media screen and (min-width:1370px) {
+        section {
+          grid-template-columns: 1fr 1fr 1fr;
+          max-width: 1300px;
+        }
+      }
+
+      img {
         cursor: pointer;
         top: 0px;
-        }
+      }
 
-        img:hover {
-          filter: blur(2px);
-
-        }
+      img:hover {
+        filter: blur(2px);
+      }
         `
   ];
 

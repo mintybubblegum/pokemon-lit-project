@@ -1,7 +1,7 @@
 import { LitElement, html, css } from 'lit';
 import { mainStyles } from "./main-styles.js";
 
-export class header extends LitElement {
+export class Header extends LitElement {
     static styles = [
         mainStyles,
         css`
@@ -10,6 +10,8 @@ export class header extends LitElement {
             }
             img {
                 cursor: pointer;
+                margin: 0 auto;
+                max-width: 1300px;
             }
             .pika-img {
                 width: 25em;
@@ -31,7 +33,7 @@ export class header extends LitElement {
     render() {
         return html`
             <header>
-                <a href="/"><img src="https://fontmeme.com/permalink/231019/5bc185de76f1f0c4891382e46a72db2a.png" alt="pokemon-font" border="0"></a>
+                <a href="/"><img class="poke-logo" src="https://fontmeme.com/permalink/231019/5bc185de76f1f0c4891382e46a72db2a.png" alt="pokemon-font" border="0"></a>
                 ${this.isCardOpen ? html`<img class="pika-img" src="/src/pika-message.png" alt="pokemon-message">` : ''}
                 <ul class="nav-list">
                     ${this.isCardOpen ? '' : html`<li class="nav-item"><button class="btn btn-header" id="ver-all">See all</button></li>`}
@@ -58,4 +60,4 @@ export class header extends LitElement {
         `;
     }
 }
-customElements.define('header-section', header);
+customElements.define('header-section', Header);
