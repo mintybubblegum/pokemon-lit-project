@@ -50,7 +50,7 @@ class Main extends LitElement {
       section {
         display: grid;
         grid-template-columns: 1fr;
-        gap: 1rem;
+        gap: 3rem;
         padding: 1.5rem 2rem;
         margin: 0 auto 40px;
         max-width: 480px;

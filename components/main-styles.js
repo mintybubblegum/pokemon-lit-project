@@ -50,15 +50,33 @@ button {
     border-radius: 0;
 }
 
+img {
+    padding: 20px 0 20px 20px;
+}
+
 header {
-    padding-block: 1rem;
+/*     padding-block: 1rem; */
     background-color:${typeColor["snow"]};
     box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 1)!important;
     max-width: 100%;
 }
 
-img {
-    padding: 20px 0 20px 20px;
+.header-imgages {
+    width: 750px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.poke-logo {
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 1rem;
+}
+
+.pika-img {
+    width: 15em;
+    height: 10em;
 }
 
 .nav {
@@ -71,11 +89,34 @@ img {
 }
 
 .nav-list {
+    padding-bottom: 1em;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     gap: .5rem;
 }
+
+/* HEADER RESPONSIVE */
+@media screen and (max-width:750px) {
+    header {
+        min-width: 800px;
+    }
+    .nav {
+        margin: 0 auto;
+    }
+    
+    .poke-logo {
+        width: 30em;
+        display: flex;
+        justify-content: center;
+    }
+
+    .pika-img {
+        display: flex;
+        justify-content: center;
+    }
+}
+
 
 .btn-header {
     background-color: ${typeColor["cloudy"]};

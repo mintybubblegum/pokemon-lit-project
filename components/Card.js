@@ -3,7 +3,7 @@ import { mainStyles } from "./main-styles.js";
 import './header';
 
 
-export class card extends LitElement {
+export class Card extends LitElement {
     static styles = [
         mainStyles,
         css`
@@ -17,7 +17,8 @@ export class card extends LitElement {
                 margin: auto;
                 margin-top: 30px;
                 margin-bottom: 20px;
-                padding: 0 30px;
+                border: 1px solid red;
+                padding: 1.5rem 2rem;
                 border-radius: 20px;
                 box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 1)!important;
                 text-align: center;
@@ -72,6 +73,7 @@ export class card extends LitElement {
 
     render() {
         return html`
+
             <div id="card-container">
                 <img src="${this.pokemonData?.img}" alt="${this.pokemonData?.name}">
                 <div class="data-box">
@@ -109,4 +111,4 @@ export class card extends LitElement {
         `;
     }
 }
-customElements.define('card-page', card);
+customElements.define('card-page', Card);
