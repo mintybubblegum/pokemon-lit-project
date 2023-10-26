@@ -52,9 +52,16 @@ class Main extends LitElement {
         grid-template-columns: 1fr;
         gap: 1rem;
         padding: 1.5rem 2rem;
-        margin: 0 auto;
+        margin: 0 auto 40px;
         max-width: 480px;
-        border: 1px solid blue;
+      }
+
+      @media screen and (max-width:552px) {
+        section {
+          grid-template-columns: 1fr;
+          max-width: 900px;
+          margin: auto 40px;
+        }
       }
 
       @media screen and (min-width:900px) {
