@@ -54,6 +54,7 @@ header {
     padding-block: 1rem;
     background-color:${typeColor["snow"]};
     box-shadow: 0 0 2rem -1rem rgba(0, 0, 0, 1)!important;
+    max-width: 100%;
 }
 
 img {
@@ -65,8 +66,7 @@ img {
     flex-direction: column;
     gap: 1rem;
     align-items: flex-start;
-    padding-inline: 2rem;
-    max-width: 1000px;
+    padding-inline: 1rem;
     margin: 0 auto;
 }
 
