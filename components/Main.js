@@ -28,8 +28,6 @@ class Main extends LitElement {
         text-transform: uppercase;
         margin: auto;
         margin-bottom: 50px;
-        float:left;
-        margin-left:70px;
         overflow: hidden;
       }
 
@@ -49,9 +47,11 @@ class Main extends LitElement {
       }
       
       section {
-        margin:0;
-        padding:0;
+        padding-top: 30px;
         background-color: #f9a7a7;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
         }
 
         img {
